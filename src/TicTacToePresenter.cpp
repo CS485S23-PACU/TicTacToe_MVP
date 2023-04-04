@@ -41,8 +41,9 @@ void TicTacToePresenter::setMove (int x, int y)
   std::string symbol;
   bool bRetVal;
   bool bWin=false;
+  bool bFull;
 
-  bRetVal =  mcTTTModel.makeMove (x, y, symbol, bWin);
+  bRetVal =  mcTTTModel.makeMove (x, y, symbol, bWin, bFull);
   
   if (bRetVal)
   {
@@ -52,6 +53,11 @@ void TicTacToePresenter::setMove (int x, int y)
   if (bWin)
   {
     mpcTTTView->setWinner (mcTTTModel.getCurrentPlayerName ());
+  }
+
+  if (bFull)
+  {
+    mpcTTTView->setWinner ("CAT!");
   }
 }
 

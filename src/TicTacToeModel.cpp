@@ -122,7 +122,7 @@ bool TicTacToeModel::isWinner (const TicTacToePlayer & rcPlayer) const
 // Returned:    true if the move succeeded, false otherwise
 //***************************************************************************
 bool TicTacToeModel::makeMove (int x, int y, std::string &rcSymbol,
-  bool &rbWin)
+  bool &rbWin, bool &rbFull)
 {
   bool bRetVal = false;
   rbWin = false;
@@ -148,6 +148,7 @@ bool TicTacToeModel::makeMove (int x, int y, std::string &rcSymbol,
       }
     }
   }
+  rbFull = isBoardFull();
   return bRetVal;
 }
 

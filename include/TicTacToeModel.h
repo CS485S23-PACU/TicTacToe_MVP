@@ -24,7 +24,7 @@ public:
 
   bool isBoardFull () const;
   bool isWinner () const;
-  bool makeMove (int x, int y, std::string &rcSymbol, bool &rbWin);
+  bool makeMove (int x, int y, std::string &rcSymbol, bool &rbWin, bool &rbFull);
   std::string getCurrentPlayerName () const;
   void resetGame ();
   void flipStartingPlayer ();
